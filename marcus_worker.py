@@ -81,14 +81,14 @@ def process_task(task):
     
     try:
         ai_response = genai_client.models.generate_content(
-            model='gemini-1.5-pro-002', contents=prompt
+            model='gemini-1.5-pro', contents=prompt
         )
         reporte = ai_response.text
         
         # C. GUARDAR RESULTADO Y CERRAR
         payload['reporte_marcus'] = reporte
         
-        # Actualizamos la pizarra: Tarea completada
+        # Actualizamos la pizarra: Tarea completada34
         supabase.table('blackboard_state').update({
             'status': 'completed',
             'current_stage': 'strategy_ready', # Listo para el siguiente agente
