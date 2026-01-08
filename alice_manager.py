@@ -83,7 +83,7 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
     
     try:
         response = client.models.generate_content(
-            model='gemini-1.5-flash-002', contents=prompt
+            model='gemini-1.5-flash', contents=prompt
         )
         text_clean = response.text.replace('```json', '').replace('```', '').strip()
         decision = json.loads(text_clean)
