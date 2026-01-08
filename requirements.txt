@@ -1,0 +1,5 @@
+python-telegram-bot
+supabase
+google-genai
+python-dotenv
+redis
